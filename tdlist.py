@@ -1,6 +1,9 @@
 # task list class
 
 from functions import *
+from tinydb import TinyDB, Query
+
+tdb = TinyDB('tdb.json')
 
 class tdlist():
     def __init__(self, tasks, name):
