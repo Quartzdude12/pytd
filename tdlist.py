@@ -36,10 +36,6 @@ class tdlist():
         else:
             print("Index out of range, try again")
 
-    def savepkl(self):
-        with open("pytd.pkl", "wb") as f:
-            pickle.dump(self, f)
-    
-    def loadpkl(self):
-        with open("pytd.pkl", "rb") as f:
-            pickle.load(self, f)    
+    def to_dict(self, tasks, name):
+        return {}
+        pass
