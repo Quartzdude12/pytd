@@ -3,4 +3,6 @@
 
 I guess I can learn a bit of python from time to time ¯\_(ツ)_/¯
 
-[ ]A
+- [ ] V 0.1 made
+- [x] Build Cooked
+
