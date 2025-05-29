@@ -33,9 +33,7 @@ class tdlist():
         destaddr = int(input("Select item to swap with: "))
         if 0 <= startaddr <= len(self.tasks) and 0 <= destaddr <= len(self.tasks):
             self.tasks[startaddr], self.tasks[destaddr] = self.tasks[destaddr], self.tasks[startaddr]
+            return startaddr, destaddr
         else:
             print("Index out of range, try again")
 
-    def to_dict(self, tasks, name):
-        return {}
-        pass
