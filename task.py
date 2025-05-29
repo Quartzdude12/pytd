@@ -3,7 +3,7 @@
 class task():
     def __init__(self, name, state=False):
         self.name = name
-        self.state = False
+        self.state = state
     
     def solve(self):
         self.state = True
@@ -13,9 +13,9 @@ class task():
 
     def __str__(self):
         if self.state == True:
-            return self.name, "Y"
+            return f"{self.name} Y"
         else:
-            return self.name, "N"
+            return f"{self.name} N"
 
     def to_dict(self): #turn into dict for tinydb
         return {

@@ -4,6 +4,7 @@ import os
 import sys
 import keyboard
 import tinydb
+from task import *
 
 def mktsk():
     tskname = str(input("Enter task name: "))

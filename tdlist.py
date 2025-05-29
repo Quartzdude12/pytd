@@ -2,7 +2,8 @@
 
 from functions import *
 from tinydb import TinyDB, Query
-
+from functions import *
+from task import task
 
 class tdlist():
     def __init__(self, tasks, name):
@@ -12,24 +13,27 @@ class tdlist():
     def addtsk(self):
         self.tasks.append(mktsk())
     
-    def showtsk(self, tasks, name):
+    def showtsk(self):
         print(self.name)
         for i in range(len(self.tasks)):
-            print(i+1,self.tasks[i])
+            print(self.tasks[i])
     
-    def remtsk(self, tasks, name):
+    def remtsk(self):
         print("Current list:")
-        showtsk()
+        self.showtsk()
         remaddr = int(input("Task number to remove: "))
+        remaddr = remaddr - 1
         del self.tasks[remaddr]
         print("Result:")
-        showtsk()
+        self.showtsk()
     
-    def swaptsk(self, tasks, name):
+    def swaptsk(self):
         print("Current list:")
-        showtsk()
+        self.showtsk()
         startaddr = int(input("Select item to move: "))
         destaddr = int(input("Select item to swap with: "))
+        startaddr = startaddr - 1
+        destaddr = destaddr - 1
         if 0 <= startaddr <= len(self.tasks) and 0 <= destaddr <= len(self.tasks):
             self.tasks[startaddr], self.tasks[destaddr] = self.tasks[destaddr], self.tasks[startaddr]
             return startaddr, destaddr
@@ -37,10 +41,20 @@ class tdlist():
             print("Index out of range, try again")
 
     def __str__(self):
-        pass
+        return f"{self.name}"
 
     def to_dict_of_dicts(self):
         return {
             'name' : self.name,
             'tasks' : [task.to_dict for task in self.tasks]
         }
+
+testbed = tdlist([], "testbed")
+testbed.addtsk()
+testbed.addtsk()
+testbed.addtsk()
+testbed.addtsk()
+testbed.showtsk()
+testbed.swaptsk()
+testbed.remtsk()
+print(testbed)
