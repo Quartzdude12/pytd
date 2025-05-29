@@ -4,10 +4,9 @@ from tdlist import tdlist
 
 tdb = TinyDB('tdb.json')
 lists = tdb.table("tdlists")
-lstswp = Query()
 
 def save_lists():
-    table.upsert(tdlist.to_dict_of_dicts(),lstswp.name == tdlist.name)
+    table.upsert(tdlist.to_dict_of_dicts(), db.name == tdlist.name)
 
 def showlists():
     print(tdb.all)

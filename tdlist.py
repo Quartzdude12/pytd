@@ -36,6 +36,9 @@ class tdlist():
         else:
             print("Index out of range, try again")
 
+    def __str__(self):
+        pass
+
     def to_dict_of_dicts(self):
         return {
             'name' : self.name,
