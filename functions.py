@@ -16,9 +16,9 @@ def mklist():
 def cleer():
     os.system('cls' if os.name == 'nt' else 'clear')
 
-def printvers():
+def printvers(): #boilerplate :/
     print("Python version: ", sys.version.split()[0])
     print("TinyDB version: ", tinydb.__version__)
     print("Keyboard version: ", keyboard.version)
+    print("pyTD version: -1")
 
-printvers()

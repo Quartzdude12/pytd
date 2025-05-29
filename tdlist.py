@@ -3,7 +3,6 @@
 from functions import *
 from tinydb import TinyDB, Query
 
-tdb = TinyDB('tdb.json')
 
 class tdlist():
     def __init__(self, tasks, name):
@@ -37,3 +36,8 @@ class tdlist():
         else:
             print("Index out of range, try again")
 
+    def to_dict_of_dicts(self):
+        return {
+            'name' : self.name,
+            'tasks' : [task.to_dict for task in self.tasks]
+        }
