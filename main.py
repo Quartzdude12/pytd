@@ -3,8 +3,6 @@
 import os
 import sys
 from functions import mktsk, mklist, cleer
-from tinydb import TinyDB, Query
-from rw import save_lists, showlists
 from task import task
 from tdlist import tdlist
 from lsman import lsman
@@ -24,10 +22,11 @@ def main():
             showlists()
         elif choice == 2:
             showlists()
+            pass
         elif choice == 3:
-            pass
+            save_lists()
         elif choice == 4:
-            pass
+            lsman()
         elif choice == 5:
             cleer()
             break

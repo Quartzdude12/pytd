@@ -1,7 +1,6 @@
 # task list class
 
 from functions import *
-from tinydb import TinyDB, Query
 from functions import *
 from task import task
 
@@ -40,21 +39,9 @@ class tdlist():
         else:
             print("Index out of range, try again")
 
-    def __str__(self):
-        return f"{self.name}"
-
     def to_dict_of_dicts(self):
         return {
             'name' : self.name,
             'tasks' : [task.to_dict for task in self.tasks]
         }
 
-testbed = tdlist([], "testbed")
-testbed.addtsk()
-testbed.addtsk()
-testbed.addtsk()
-testbed.addtsk()
-testbed.showtsk()
-testbed.swaptsk()
-testbed.remtsk()
-print(testbed)
